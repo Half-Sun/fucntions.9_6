@@ -24,6 +24,7 @@ def test_dark_theme_by_time_and_user_choice():
 
     current_time = time(hour=16)
     dark_theme_enabled_by_user = True
+    is_dark_theme = None
     if dark_theme_enabled_by_user:
         is_dark_theme = True
         if not dark_theme_enabled_by_user:
@@ -45,15 +46,14 @@ def test_find_suitable_user():
         {"name": "Olga", "age": 45},
         {"name": "Maria", "age": 18},
     ]
-
+    suitable_users = []
     for user in users:
+
         if user["name"] == "Olga":
             return user
         else:
             return None
     assert suitable_users == {"name": "Olga", "age": 45}
-    # for key, value in user.items():
-    # print(f"age: {value}, name: {value}")
 
     suitable_users = []
     for user in users:
